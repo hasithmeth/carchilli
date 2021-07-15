@@ -1,3 +1,9 @@
+@font-face {
+    font-family: "ShowCardRegular";
+    src: url("/fonts/showcard.gothic.regular.ttf") format("truetype");
+    font-weight: normal;
+}
+
 .header {
     height: 8rem;
     display: flex;
@@ -5,6 +11,30 @@
     background: #F2F2F2;
     justify-content: space-evenly;
     align-items: center;
+}
+
+.mobileHeader {
+    background: #F2F2F2;
+    height: 4rem;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.mobileLogoText {
+    font-family: "ShowCardRegular", serif;
+    font-size: x-large;
+    display: flex;
+    flex-direction: row;
+}
+
+.car {
+    color: #D63132;
+}
+
+.chilli {
+    color: #9AC355;
+    padding-left: 10px;
 }
 
 .dropDown {
@@ -18,7 +48,7 @@
     box-shadow: 3px 3px 4px 0px rgba(0, 0, 0, 0.27);
     display: flex;
     flex-direction: column;
-    transition: 120ms ease-in-out;
+    transition: 120ms ease-in;
 }
 
 .dropItem {

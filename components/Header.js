@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useMediaQuery } from "react-responsive";
 import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/router";
@@ -8,6 +9,7 @@ import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 
 export default function Header() {
 	const router = useRouter();
+	const isMobile = useMediaQuery({ maxWidth: 768 });
 	const [dropVisible, setDropVisible] = useState(false);
 
 	function handleMenuOpen() {
@@ -34,7 +36,7 @@ export default function Header() {
 					<a className={ styles.loginText }>Login</a>
 				</Link>
 			</div>
-			<div className={ styles.header }>
+			{ !isMobile && <div className={ styles.header }>
 				<div className={ styles.logo }>
 					<Image src={ logo } alt={ "Carchilli Logo" }/>
 				</div>
@@ -78,7 +80,13 @@ export default function Header() {
 						</div>
 					</div>
 				</div>
-			</div>
+			</div> }
+			{ isMobile && <div className={ styles.mobileHeader }>
+				<div className={ styles.mobileLogoText }>
+					<div className={ styles.car }>CAR</div>
+					<div className={ styles.chilli }>CHILLI.COM</div>
+				</div>
+			</div> }
 		</header>
 	);
 }

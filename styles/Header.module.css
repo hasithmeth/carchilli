@@ -22,7 +22,7 @@
 }
 
 .mobileLogoText {
-    font-family: "ShowCardRegular", serif;
+    font-family: "ShowCardRegular", sans-serif;
     font-size: x-large;
     display: flex;
     flex-direction: row;

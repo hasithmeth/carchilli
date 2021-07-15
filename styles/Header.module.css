@@ -1,17 +1,52 @@
 .header {
-
+    height: 8rem;
+    display: flex;
+    flex-direction: row;
+    background: #F2F2F2;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
 .loginBar {
-    height: 2rem;
-    padding-right: 5rem;
     display: flex;
-    margin: auto;
     justify-content: flex-end;
     align-items: center;
+    height: 2.5rem;
+    padding-right: 5rem;
 }
 
 .loginText {
     font-weight: bold;
     padding-left: 2rem;
+}
+
+.menu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-weight: 300;
+}
+
+.menuText {
+    padding-left: 2rem;
+}
+
+.menuTextFirstItem {
+    padding-left: 0;
+}
+
+.selectedMenuText {
+    padding-left: 2rem;
+    color: #D63132;
+}
+
+.selectedMenuTextFirstItem {
+    color: #D63132;
+}
+
+.logo {
+    display: flex;
+    height: 7rem;
+    width: 7rem;
 }

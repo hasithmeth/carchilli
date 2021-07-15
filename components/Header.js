@@ -5,7 +5,8 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import styles from "@/styles/Header.module.css";
 import logo from "../public/assets/Logo-File-Old.png";
-import { FaChevronDown, FaChevronUp } from "react-icons/fa";
+import logoSmall from "../public/assets/logo-small-words.png";
+import { FaChevronDown, FaChevronUp, FaBars } from "react-icons/fa";
 
 export default function Header() {
 	const router = useRouter();
@@ -82,9 +83,12 @@ export default function Header() {
 				</div>
 			</div> }
 			{ isMobile && <div className={ styles.mobileHeader }>
-				<div className={ styles.mobileLogoText }>
-					<div className={ styles.car }>CAR</div>
-					<div className={ styles.chilli }>CHILLI.COM</div>
+				<div className={ styles.mobileLogo }>
+					<Image className={ styles.mobileLogoImg }
+					       src={ logoSmall }/>
+				</div>
+				<div className={ styles.hamburger }>
+					<FaBars size={ 25 } color={ "black" }/>
 				</div>
 			</div> }
 		</header>

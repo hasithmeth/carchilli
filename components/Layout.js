@@ -7,12 +7,6 @@ export default function Layout({ title, keywords, description, children }) {
 	const router = useRouter();
 	return (
 		<div>
-			<link
-				rel={ "preload" }
-				href={ "/fonts/showcard.gothic.regular.ttf" }
-				as="font"
-				crossOrigin=""
-			/>
 			<Head>
 				<title>{ title }</title>
 				<meta name={ "Description" } content={ description }/>

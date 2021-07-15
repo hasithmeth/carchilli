@@ -2,6 +2,7 @@
     font-family: "ShowCardRegular";
     src: url("/fonts/showcard.gothic.regular.ttf");
     font-weight: normal;
+    font-display: swap;
 }
 
 .header {

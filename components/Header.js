@@ -1,11 +1,29 @@
+import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import styles from "@/styles/Header.module.css";
 import logo from "../public/assets/Logo-File-Old.png";
+import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 
 export default function Header() {
 	const router = useRouter();
+	const [dropVisible, setDropVisible] = useState(false);
+
+	function handleMenuOpen() {
+		setDropVisible(true);
+	}
+
+	function handleMenuClose() {
+		setDropVisible(false);
+	}
+
+	const Chron = () => (
+		dropVisible ?
+			<FaChevronUp size={ 10 } style={ { marginLeft: 5 } }/> :
+			<FaChevronDown size={ 10 } style={ { marginLeft: 5 } }/>
+	);
+
 	return (
 		<header>
 			<div className={ styles.loginBar }>
@@ -36,11 +54,29 @@ export default function Header() {
 							styles.selectedMenuText :
 							styles.menuText }>Become A Host</a>
 					</Link>
-					<Link href={ "/guestWelcome" }>
-						<a className={ router.route === "/guestWelcome" ?
+					<div onMouseEnter={ handleMenuOpen }
+					     onMouseLeave={ handleMenuClose }
+					>
+						<div className={ router.route === "/guestWelcome" ?
 							styles.selectedMenuText :
-							styles.menuText }>Hi Guest!</a>
-					</Link>
+							styles.menuText }>
+							Hi Guest! <Chron/>
+						</div>
+						<div
+							className={ dropVisible ?
+								styles.dropDown :
+								styles.dropDownHidden }>
+							<Link href={ "/wallet" }>
+								<a className={ styles.dropItem }>Wallet</a>
+							</Link>
+							<Link href={ "/orderForm" }>
+								<a className={ styles.dropItem }>Order Form</a>
+							</Link>
+							<Link href={ "/account" }>
+								<a className={ styles.dropItem }>Account</a>
+							</Link>
+						</div>
+					</div>
 				</div>
 			</div>
 		</header>

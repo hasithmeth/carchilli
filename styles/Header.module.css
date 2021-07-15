@@ -1,6 +1,6 @@
 @font-face {
     font-family: "ShowCardRegular";
-    src: url("/fonts/showcard.gothic.regular.ttf") format("truetype");
+    src: url("/fonts/showcard.gothic.regular.ttf");
     font-weight: normal;
 }
 
